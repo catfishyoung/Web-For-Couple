@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code By Dante</title>
+    <style>
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+        body {
+            height: 100vh;
+            width: 100vw;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #ff9a9e, #fad0c4, #ffdde1);
+            background-size: 300% 300%;
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            text-align: center;
+        }
+        .gif-container img {
+            width: 250px;
+            height: auto;
+            animation: fadeIn 3s ease-in forwards;
+        }
+        .text {
+            font-size: 2em;
+            color: white;
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+            animation: fadeIn 3s ease-in forwards;
+        }
+        @keyframes fall {
+    to { transform: translateY(100vh); opacity: 0; }
+}
+
+    </style>
+</head>
+<body>
+    <div class="gif-container">
+        <img src="Blush Bugcat Sticker by Capoo.gif" alt="Gif Facebook">
+    </div>
+    <div class="text">Tui biết mà, iu Trang lắm lắm lắm, vào Facebook set hẹn hò đê =)))) 💕</div>
+</body>
+<script>
+    setInterval(() => {
+    let heart = document.createElement("div");
+    heart.innerHTML = "💖";
+    heart.style.position = "absolute";
+    heart.style.left = Math.random() * window.innerWidth + "px";
+    heart.style.top = "-10px";
+    heart.style.fontSize = Math.random() * 20 + 10 + "px";
+    heart.style.opacity = Math.random();
+    heart.style.animation = "fall 3s linear";
+    document.body.appendChild(heart);
+    setTimeout(() => heart.remove(), 3000);
+}, 300);
+</script>
+</html>

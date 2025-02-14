@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code By Dante</title>
+    <style>
+        @keyframes bgAnimation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        body {
+            height: 100vh;
+            width: 100vw;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #ff9a9e, #fad0c4, #ffdde1);
+            background-size: 300% 300%;
+            animation: bgAnimation 6s ease infinite;
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            text-align: center;
+        }
+        h1 {
+            font-size: 2.5em;
+            color: white;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+        }
+        .buttons {
+            display: flex;
+            gap: 20px;
+        }
+        button {
+            font-size: 1.5em;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(255, 100, 150, 0.3);
+        }
+        @keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    50% { transform: translateX(5px); }
+    75% { transform: translateX(-5px); }
+}
+
+        .yes {
+            background-color: #ff4d79;
+            color: white;
+        }
+        @keyframes glow {
+    0% { box-shadow: 0 0 10px rgba(255, 100, 150, 0.5); }
+    50% { box-shadow: 0 0 20px rgba(255, 100, 150, 1); }
+    100% { box-shadow: 0 0 10px rgba(255, 100, 150, 0.5); }
+}
+.yes:hover {
+    animation: glow 1s infinite alternate;
+}
+
+        .no {
+            background-color: #444;
+            color: white;
+        }
+        .no:active {
+    animation: shake 0.3s ease-in-out;
+}
+    </style>
+</head>
+<body>
+    <div class="gif-container">
+        <img src="Nervous Sweat Sticker by Capoo.gif" alt="Gif Facebook">
+    </div>
+    <h1>Trang có iu Dante hong? :3</h1>
+    <div class="buttons">
+        <button class="yes" onclick="redirectToResult()">Có</button>
+        <button class="no" onclick="growNoButton()">Không</button>
+    </div>
+
+    <script>
+let noButton = document.querySelector('.no');
+let yesButton = document.querySelector('.yes');
+let noClickCount = 0;
+
+let responses = [
+    "Không", "Ơ kìa sao dợ :<", "Suy nghĩ lại đi mà 😢", "Sao lại là không huhu", "Tui cũm được mà :<", 
+    "Thui mòoooo", "Ấn có điii :3", "Dante iu Trang mò ấn có đi =)))))", "Đừng ấn Không nữa màaaaa :<", 
+    "Ấn không nữa bắt cóc m áaaa", "Ấn có đi màaaaa :3", "Suy nghĩ lại 1 chút nha nha", 
+    "Tui bùn á ấn Có đi =)))", "Ấn có đi mà Trangggg", "iu Trang lắm ấn Có đi =))))", "Chị Trang xinh gái ấn Có đi =))))", "Iu thương z mà từ chối người taaaa", "Người ta buồn áaaaa :<", "Hong cấn có t xiên m áaaa", "Gòi xong nói tới cỡ đó rồi á :<", "Do Trang muốn á nha =)))"
+];
+
+function growNoButton() {
+    noClickCount++;
+    yesButton.style.fontSize = (4.5 + noClickCount * 4.0) + 'em';
+    noButton.innerText = responses[Math.min(noClickCount, responses.length - 1)];
+    
+    if (parseFloat(yesButton.style.fontSize) > window.innerWidth / 10) {
+        yesButton.style.fontSize = '10vw';
+        yesButton.innerText = "Không thể từ chối được nữa! 💖";
+    }
+}
+
+function redirectToResult() {
+    window.location.href = "ketqua.html";
+}
+
+    </script>
+</body>
+</html>
+
